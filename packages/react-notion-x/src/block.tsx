@@ -212,6 +212,10 @@ export const Block: React.FC<BlockProps> = (props) => {
                       )}
                     </h1>
 
+                    {!!components.AfterTitle && (
+                      <components.AfterTitle {...{ block }} />
+                    )}
+
                     {(block.type === 'collection_view_page' ||
                       (block.type === 'page' &&
                         block.parent_table === 'collection')) && (
