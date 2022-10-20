@@ -116,6 +116,9 @@ export const Asset: React.FC<{
       }
     }
 
+    if (block_aspect_ratio) {
+      assetStyle.aspectRatio = `${1 / block_aspect_ratio}`
+    }
     if (block.type === 'image') {
       assetStyle.objectFit = 'cover'
     } else if (block_preserve_scale) {
