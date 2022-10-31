@@ -158,7 +158,7 @@ export const LazyImage: React.FC<{
           alt={alt}
           className={className}
           style={style}
-          width={style.width || null}
+          width={style?.width || null}
           height={height || null}
           priority={priority}
           onLoad={onLoad}
