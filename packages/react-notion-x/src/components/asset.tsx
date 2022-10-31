@@ -265,13 +265,16 @@ export const Asset: React.FC<{
     const src = mapImageUrl(source, block as Block)
     const caption = getTextContent(block.properties?.caption)
     const alt = caption || 'notion image'
+    const { block_aspect_ratio, block_width } = block.format
+    assetStyle.width = block_width
+    const height = block_width * block_aspect_ratio
 
     content = (
       <LazyImage
         src={src}
         alt={alt}
         zoomable={zoomable}
-        height={style.height as number}
+        height={height}
         style={assetStyle}
       />
     )
